@@ -11,6 +11,7 @@ Where locate file, example 'grep'
 ```
 which grep
 ```
+#First way
 
 Open .bash\_profile
 
@@ -38,4 +39,25 @@ hello
 ```
 echo $PATH
 ```
+#Second way
 
+```
+echo 'echo hello2' > hello2
+```
+Check where you
+```
+pwd
+```
+```
+chmod +x hello2
+```
+```
+echo $PATH
+```
+Create link
+```
+ln -s ~/hello2 /usr/local/bin
+```
+```
+hello2
+```
