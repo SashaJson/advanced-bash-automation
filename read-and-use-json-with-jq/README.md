@@ -11,3 +11,7 @@ echo '[1,2,3]' | jq '.[]'
 ```bash
 echo '[{"id":1}, {"id":2}]' | jq '.[].id'
 ```
+With file:
+```bash
+cat package.json | jq '.name'
+```
