@@ -37,7 +37,7 @@ check_is_set() {
   if [[ -z $2 ]]; then 
     echo "ERROR: $1 must be set" >&2
     usage >&2
-    exit
+    exit 1
   fi
 }
 
