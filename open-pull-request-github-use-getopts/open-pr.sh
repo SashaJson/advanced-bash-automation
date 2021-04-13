@@ -15,8 +15,8 @@ while getopts ':u:p:t:h' opt; do
     p) password="$OPTARG";;
     t) title="$OPTARG";;
     h) 
-       usage
-       exit
+      usage
+      exit
     ;;
     \?) 
       echo "Invalid option $OPTARG" >&2
