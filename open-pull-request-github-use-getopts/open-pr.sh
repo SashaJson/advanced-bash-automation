@@ -6,7 +6,7 @@ title=''
 password=''
 
 usage() {
-  echo "Usage: open-pr [-u <username>] [-p <password-token>] [-t <title of the PR>] <body of PR>"
+  echo "Usage: open-pr [-u <username>] [-p <password/token>] [-t <title of the PR>] <body of PR>"
 }
 
 while getopts ':u:p:t:h' opt; do
@@ -26,10 +26,10 @@ while getopts ':u:p:t:h' opt; do
   esac
 done
 
-shift $(( OPTIND - 1 ))
+shift $((OPTIND - 1))
 
-if [[ $current_branch == 'master' ]]; then
-  echo "You are already on master, create a new branch, push it, and then run this script" >&2
+if [[ $current_branch == 'main' ]]; then
+  echo "You are already on main, create a new branch, push it, and then run this script" >&2
   exit 1  
 fi
 
@@ -48,7 +48,7 @@ check_is_set "title" $title
 data=$(cat <<-END 
 {
   "title": "$title",
-  "base": "master",
+  "base": "main",
   "head": "$current_branch",
   "body": "$@"
 }
